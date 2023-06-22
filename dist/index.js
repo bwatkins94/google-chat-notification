@@ -2116,9 +2116,9 @@ class Context {
         this.job = process.env.GITHUB_JOB;
         this.runNumber = parseInt(process.env.GITHUB_RUN_NUMBER, 10);
         this.runId = parseInt(process.env.GITHUB_RUN_ID, 10);
-        this.apiUrl = (_a = process.env.GITHUB_API_URL) !== null && _a !== void 0 ? _a : `https://api.github.com`;
-        this.serverUrl = (_b = process.env.GITHUB_SERVER_URL) !== null && _b !== void 0 ? _b : `https://github.com`;
-        this.graphqlUrl = (_c = process.env.GITHUB_GRAPHQL_URL) !== null && _c !== void 0 ? _c : `https://api.github.com/graphql`;
+        this.apiUrl = (_a = process.env.GITHUB_API_URL) !== null && _a !== void 0 ? _a : `https://github.kytheratas.com/api/v3`;
+        this.serverUrl = (_b = process.env.GITHUB_SERVER_URL) !== null && _b !== void 0 ? _b : `https://github.kytheratas.com`;
+        this.graphqlUrl = (_c = process.env.GITHUB_GRAPHQL_URL) !== null && _c !== void 0 ? _c : `https://github.kytheratas.com/api/graphql`;
     }
     get issue() {
         const payload = this.payload;
@@ -2621,7 +2621,7 @@ function notify(name, url, status) {
         const { owner, repo } = github.context.repo;
         const { eventName, sha, ref } = github.context;
         const { number } = github.context.issue;
-        const repoUrl = `https://github.com/${owner}/${repo}`;
+        const repoUrl = `https://github.kytheratas.com/${owner}/${repo}`;
         const eventPath = eventName === 'pull_request' ? `/pull/${number}` : `/commit/${sha}`;
         const eventUrl = `${repoUrl}${eventPath}`;
         const checksUrl = `${repoUrl}${eventPath}/checks`;
